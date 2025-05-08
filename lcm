@@ -1,0 +1,27 @@
+NUM1: DW 32
+NUM2: DW 24
+GCD: DW 0
+LCM: DW 0
+
+start: 
+ MOV AX, word NUM1
+ MOV BX, word NUM2
+
+HESAPLA: 
+ MOV DX, 0
+ DIV BX
+ MOV AX, BX
+ MOV BX, DX
+ CMP BX, 0
+ JNZ HESAPLA
+
+
+MOV word GCD, AX
+MOV CX, AX
+MOV AX, word NUM1
+MOV BX, word num2
+MUL BX
+DIV CX
+
+MOV word LCM, AX
+print reg
